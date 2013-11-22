@@ -1,8 +1,11 @@
 valgrind_checker
 ================
 
-valgrind_checker
+## example
 
-* example * 
->>> gcc main.c
->>> valgrind -v  --leak-check=full ./a.out 2>&1 | tee results/darwin.log
+```sh
+git clone [git-repo-url] valgrind_checker
+cd valgrind_checker
+gcc main.c
+valgrind -v  --leak-check=full ./a.out 2>&1 | tee results/darwin.log
+```
