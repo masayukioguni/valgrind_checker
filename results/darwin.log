@@ -1,0 +1,400 @@
+==93380== Memcheck, a memory error detector
+==93380== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==93380== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==93380== Command: ./a.out
+==93380== 
+==93380== WARNING: Support on MacOS 10.8 is experimental and mostly broken.
+==93380== WARNING: Expect incorrect results, assertions and crashes.
+==93380== WARNING: In particular, Memcheck on 32-bit programs will fail to
+==93380== WARNING: detect any errors associated with heap-allocated data.
+==93380== 
+--93380-- Valgrind options:
+--93380--    -v
+--93380--    --leak-check=full
+--93380-- Contents of /proc/version:
+--93380--   can't open /proc/version
+--93380-- Arch and hwcaps: AMD64, amd64-sse3-cx16-avx
+--93380-- Page sizes: currently 4096, max supported 4096
+--93380-- Valgrind library directory: /usr/local/Cellar/valgrind/3.8.1/lib/valgrind
+--93380-- /usr/lib/dyld (rx at 0x7fff5fc00000, rw at 0x7fff5fc35000)
+--93380--    reading syms   from primary file (6 1144)
+--93380-- Scheduler: using generic scheduler lock implementation.
+--93380-- Reading suppressions file: /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/default.supp
+==93380== embedded gdbserver: reading from /var/folders/p1/bmb0h8j10q77cpf_d0r30ysm0000gn/T//vgdb-pipe-from-vgdb-to-93380-by-oguni-on-???
+==93380== embedded gdbserver: writing to   /var/folders/p1/bmb0h8j10q77cpf_d0r30ysm0000gn/T//vgdb-pipe-to-vgdb-from-93380-by-oguni-on-???
+==93380== embedded gdbserver: shared mem   /var/folders/p1/bmb0h8j10q77cpf_d0r30ysm0000gn/T//vgdb-pipe-shared-mem-vgdb-93380-by-oguni-on-???
+==93380== 
+==93380== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==93380== don't want to do, unless you know exactly what you're doing,
+==93380== or are doing some strange experiment):
+==93380==   /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/../../bin/vgdb --pid=93380 ...command...
+==93380== 
+==93380== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==93380==   /path/to/gdb ./a.out
+==93380== and then give GDB the following command
+==93380==   target remote | /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/../../bin/vgdb --pid=93380
+==93380== --pid is optional if only one valgrind process is running
+==93380== 
+--93380-- REDIR: 0x7fff5fc1ea35 (arc4random) redirected to 0x23804b325 (???)
+--93380-- REDIR: 0x7fff5fc1d470 (strcmp) redirected to 0x23804b287 (???)
+--93380-- REDIR: 0x7fff5fc1d510 (strlen) redirected to 0x23804b256 (???)
+--93380-- REDIR: 0x7fff5fc23679 (strcpy) redirected to 0x23804b2a3 (???)
+--93380-- REDIR: 0x7fff5fc23700 (strcat) redirected to 0x23804b267 (???)
+--93380-- /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_core-amd64-darwin.so (rx at 0x1000, rw at 0x3000)
+--93380--    reading syms   from primary file (3 10)
+--93380--    dSYM= /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_core-amd64-darwin.so.dSYM/Contents/Resources/DWARF/vgpreload_core-amd64-darwin.so
+--93380-- /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so (rx at 0x5000, rw at 0xa000)
+--93380--    reading syms   from primary file (47 18)
+--93380--    dSYM= /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so.dSYM/Contents/Resources/DWARF/vgpreload_memcheck-amd64-darwin.so
+--93380-- /usr/lib/libSystem.B.dylib (rx at 0xc000, rw at 0xe000)
+--93380--    reading syms   from primary file (31 2)
+--93380-- /usr/lib/system/libcache.dylib (rx at 0x14000, rw at 0x1a000)
+--93380--    reading syms   from primary file (28 34)
+--93380-- /usr/lib/system/libcommonCrypto.dylib (rx at 0x1e000, rw at 0x2d000)
+--93380--    reading syms   from primary file (191 153)
+--93380-- /usr/lib/system/libcompiler_rt.dylib (rx at 0x39000, rw at 0x3f000)
+--93380--    reading syms   from primary file (294 6)
+--93380-- /usr/lib/system/libcopyfile.dylib (rx at 0x46000, rw at 0x4e000)
+--93380--    reading syms   from primary file (8 14)
+--93380-- /usr/lib/system/libdispatch.dylib (rx at 0x54000, rw at 0x6a000)
+--93380--    reading syms   from primary file (135 553)
+--93380-- /usr/lib/system/libdnsinfo.dylib (rx at 0x7e000, rw at 0x80000)
+--93380--    reading syms   from primary file (17 17)
+--93380-- /usr/lib/system/libdyld.dylib (rx at 0x84000, rw at 0x88000)
+--93380--    reading syms   from primary file (76 94)
+--93380-- /usr/lib/system/libkeymgr.dylib (rx at 0x8e000, rw at 0x8f000)
+--93380--    reading syms   from primary file (12 4)
+--93380-- /usr/lib/system/liblaunch.dylib (rx at 0x92000, rw at 0x9b000)
+--93380--    reading syms   from primary file (114 1)
+--93380-- /usr/lib/system/libmacho.dylib (rx at 0xa2000, rw at 0xa9000)
+--93380--    reading syms   from primary file (85 4)
+--93380-- /usr/lib/system/libquarantine.dylib (rx at 0xad000, rw at 0xb0000)
+--93380--    reading syms   from primary file (51 6)
+--93380-- /usr/lib/system/libremovefile.dylib (rx at 0xb4000, rw at 0xb6000)
+--93380--    reading syms   from primary file (15 5)
+--93380-- /usr/lib/system/libsystem_blocks.dylib (rx at 0xbb000, rw at 0xbd000)
+--93380--    reading syms   from primary file (24 24)
+--93380-- /usr/lib/system/libsystem_c.dylib (rx at 0xc1000, rw at 0x18e000)
+--93380--    reading syms   from primary file (1818 1223)
+==93380== Preferring higher priority redirection:
+--93380--     old: 0x000c21e8 (memcpy$VARIANT$sse3x) R-> (2018.0) 0x00008a63 memcpy$VARIANT$sse3x
+--93380--     new: 0x000c21e8 (memcpy$VARIANT$sse3x) R-> (2018.1) 0x00008e96 memmove$VARIANT$sse3x
+==93380== Preferring higher priority redirection:
+--93380--     old: 0x000c29e8 (memcpy$VARIANT$sse42) R-> (2018.0) 0x00008c43 memcpy$VARIANT$sse42
+--93380--     new: 0x000c29e8 (memcpy$VARIANT$sse42) R-> (2018.1) 0x00009008 memmove$VARIANT$sse42
+--93380-- /usr/lib/system/libsystem_dnssd.dylib (rx at 0x1d0000, rw at 0x1d9000)
+--93380--    reading syms   from primary file (66 33)
+--93380-- /usr/lib/system/libsystem_info.dylib (rx at 0x1de000, rw at 0x215000)
+--93380--    reading syms   from primary file (681 520)
+--93380-- /usr/lib/system/libsystem_kernel.dylib (rx at 0x22c000, rw at 0x248000)
+--93380--    reading syms   from primary file (807 72)
+--93380-- /usr/lib/system/libsystem_m.dylib (rx at 0x259000, rw at 0x288000)
+--93380--    reading syms   from primary file (540 1)
+--93380-- /usr/lib/system/libsystem_network.dylib (rx at 0x292000, rw at 0x2a1000)
+--93380--    reading syms   from primary file (58 329)
+--93380-- /usr/lib/system/libsystem_notify.dylib (rx at 0x2ad000, rw at 0x2b9000)
+--93380--    reading syms   from primary file (144 77)
+--93380-- /usr/lib/system/libsystem_sandbox.dylib (rx at 0x2c1000, rw at 0x2c3000)
+--93380--    reading syms   from primary file (48 8)
+--93380-- /usr/lib/system/libunc.dylib (rx at 0x2c7000, rw at 0x2ca000)
+--93380--    reading syms   from primary file (31 4)
+--93380-- /usr/lib/system/libunwind.dylib (rx at 0x2cf000, rw at 0x2d6000)
+--93380--    reading syms   from primary file (102 52)
+--93380-- /usr/lib/system/libxpc.dylib (rx at 0x2dc000, rw at 0x2ff000)
+--93380--    reading syms   from primary file (253 703)
+--93380-- /usr/lib/system/libcorecrypto.dylib (rx at 0x316000, rw at 0x366000)
+--93380--    reading syms   from primary file (293 426)
+--93380-- /usr/lib/libobjc.A.dylib (rx at 0x373000, rw at 0x48c000)
+--93380--    reading syms   from primary file (335 812)
+--93380-- /usr/lib/libauto.dylib (rx at 0x4ab000, rw at 0x4f8000)
+--93380--    reading syms   from primary file (68 737)
+--93380-- /usr/lib/libc++abi.dylib (rx at 0x50e000, rw at 0x534000)
+--93380--    reading syms   from primary file (178 1699)
+--93380-- /usr/lib/libc++.1.dylib (rx at 0x564000, rw at 0x5cd000)
+--93380--    reading syms   from primary file (1944 1565)
+--93380-- /usr/lib/libDiagnosticMessagesClient.dylib (rx at 0x625000, rw at 0x627000)
+--93380--    reading syms   from primary file (21 14)
+--93380-- REDIR: 0xc29e8 (memcpy$VARIANT$sse42) redirected to 0x9008 (memmove$VARIANT$sse42)
+--93380-- REDIR: 0xc36b0 (strncmp) redirected to 0x89e3 (strncmp)
+--93380-- REDIR: 0xeebae (malloc) redirected to 0x71ba (malloc)
+--93380-- REDIR: 0xed5eb (malloc_default_zone) redirected to 0x84d9 (malloc_default_zone)
+--93380-- REDIR: 0xee13c (malloc_zone_malloc) redirected to 0x7452 (malloc_zone_malloc)
+--93380-- REDIR: 0xee801 (free) redirected to 0x75b8 (free)
+--93380-- REDIR: 0xee42f (malloc_zone_calloc) redirected to 0x7a06 (malloc_zone_calloc)
+--93380-- REDIR: 0xc3300 (strcmp) redirected to 0x8a29 (strcmp)
+--93380-- REDIR: 0xc3660 (strlen) redirected to 0x8790 (strlen)
+--93380-- REDIR: 0xee60b (malloc_zone_from_ptr) redirected to 0x84f3 (malloc_zone_from_ptr)
+--93380-- REDIR: 0xee5ab (malloc_zone_free) redirected to 0x76da (malloc_zone_free)
+--93380-- REDIR: 0xeebf4 (calloc) redirected to 0x7810 (calloc)
+--93380-- REDIR: 0xc33a0 (strcpy) redirected to 0x87a8 (strcpy)
+==93380== 
+==93380== HEAP SUMMARY:
+==93380==     in use at exit: 58,797 bytes in 363 blocks
+==93380==   total heap usage: 515 allocs, 152 frees, 62,687 bytes allocated
+==93380== 
+==93380== Searching for pointers to 363 not-freed blocks
+==93380== Checked 8,981,016 bytes
+==93380== 
+==93380== 16 bytes in 1 blocks are definitely lost in loss record 7 of 81
+==93380==    at 0x74D7: malloc_zone_malloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x375381: recursive_mutex_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x374025: _objc_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0xDB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==93380==    by 0x7FFF5FC13377: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC13761: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC1006D: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0FEB9: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC01F9D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC05B03: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC01396: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==93380== 
+==93380== 32 bytes in 1 blocks are possibly lost in loss record 24 of 81
+==93380==    at 0x7A8F: malloc_zone_calloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x3776EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x37746C: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x376788: _read_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3759EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x85ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==93380==    by 0x37404C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0xDB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==93380==    by 0x7FFF5FC13377: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380== 
+==93380== 32 bytes in 1 blocks are possibly lost in loss record 25 of 81
+==93380==    at 0x7A8F: malloc_zone_calloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x3776EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x387324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x376E9C: _read_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3759EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x85ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==93380==    by 0x37404C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0xDB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==93380==    by 0x7FFF5FC13377: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380== 
+==93380== 64 bytes in 2 blocks are possibly lost in loss record 35 of 81
+==93380==    at 0x7A8F: malloc_zone_calloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x3776EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3777F6: _NXHashRehashToCapacity (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x377748: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x387324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x376E9C: _read_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3759EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x85ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==93380==    by 0x37404C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==93380== 
+==93380== 64 bytes in 1 blocks are definitely lost in loss record 36 of 81
+==93380==    at 0x74D7: malloc_zone_malloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x3753CF: recursive_mutex_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x374025: _objc_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0xDB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==93380==    by 0x7FFF5FC13377: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC13761: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC1006D: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0FEB9: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC01F9D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC05B03: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC01396: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==93380== 
+==93380== 72 (24 direct, 48 indirect) bytes in 1 blocks are definitely lost in loss record 37 of 81
+==93380==    at 0x7A8F: malloc_zone_calloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x37B6D2: _objc_fetch_pthread_data (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x384C4D: _fetchInitializingClassList(signed char) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x37B181: _class_initialize (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x37B137: _class_initialize (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x37B137: _class_initialize (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x37B137: _class_initialize (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x37B0F2: prepareForMethodLookup (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x37AEEE: lookUpMethod (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3792FB: objc_msgSend (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x2E0E87: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==93380==    by 0xDB2C: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==93380== 
+==93380== 96 bytes in 3 blocks are possibly lost in loss record 41 of 81
+==93380==    at 0x7A8F: malloc_zone_calloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x3776EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3777F6: _NXHashRehashToCapacity (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x377748: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x38733D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3865D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x376E9C: _read_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3759EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x85ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==93380== 
+==93380== 120 (40 direct, 80 indirect) bytes in 1 blocks are definitely lost in loss record 44 of 81
+==93380==    at 0x7A8F: malloc_zone_calloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x375781: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x85ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==93380==    by 0x37404C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0xDB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==93380==    by 0x7FFF5FC13377: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC13761: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC1006D: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==93380== 
+==93380== 216 bytes in 9 blocks are possibly lost in loss record 55 of 81
+==93380==    at 0x7A8F: malloc_zone_calloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x37766D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3777F6: _NXHashRehashToCapacity (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x377748: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x38733D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3865D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x376E9C: _read_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3759EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x85ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==93380== 
+==93380== 216 bytes in 9 blocks are possibly lost in loss record 56 of 81
+==93380==    at 0x7A8F: malloc_zone_calloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x37766D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3777F6: _NXHashRehashToCapacity (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x377748: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x387324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x376E9C: _read_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3759EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x85ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==93380==    by 0x37404C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==93380== 
+==93380== 264 bytes in 1 blocks are definitely lost in loss record 60 of 81
+==93380==    at 0x7237: malloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x85C35: getPerThreadBufferFor_dlerror(unsigned int) (in /usr/lib/system/libdyld.dylib)
+==93380==    by 0x7FFF5FC0A694: dlopen (in /usr/lib/dyld)
+==93380==    by 0x85DD7: dlopen (in /usr/lib/system/libdyld.dylib)
+==93380==    by 0x3757D3: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x85ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==93380==    by 0x37404C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0xDB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==93380==    by 0x7FFF5FC13377: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380== 
+==93380== 528 bytes in 1 blocks are possibly lost in loss record 63 of 81
+==93380==    at 0x74D7: malloc_zone_malloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x377293: NXCreateMapTableFromZone (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x38ADEE: unattachedCategories() (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3871F4: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3865D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3865BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3865BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3865BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x376E9C: _read_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3759EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380== 
+==93380== 629 bytes in 39 blocks are possibly lost in loss record 67 of 81
+==93380==    at 0x74D7: malloc_zone_malloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x377F87: _strdup_internal (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x377F39: NXMapKeyCopyingInsert (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x376D9D: _read_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3759EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x85ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==93380==    by 0x37404C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0xDB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==93380==    by 0x7FFF5FC13377: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380== 
+==93380== 1,040 bytes in 1 blocks are possibly lost in loss record 71 of 81
+==93380==    at 0x74D7: malloc_zone_malloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x377293: NXCreateMapTableFromZone (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x385ABC: futureNamedClasses() (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3767FB: _read_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3759EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x85ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==93380==    by 0x37404C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0xDB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==93380==    by 0x7FFF5FC13377: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380== 
+==93380== 1,040 bytes in 1 blocks are possibly lost in loss record 72 of 81
+==93380==    at 0x74D7: malloc_zone_malloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x377293: NXCreateMapTableFromZone (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x38BDC4: remappedClasses(signed char) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x385957: remapClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3769A1: _read_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3759EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x85ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==93380==    by 0x37404C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0xDB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==93380== 
+==93380== 1,040 bytes in 1 blocks are possibly lost in loss record 73 of 81
+==93380==    at 0x74D7: malloc_zone_malloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x380C81: _NXMapRehash(_NXMapTable*) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x377A80: NXMapInsert (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x377F47: NXMapKeyCopyingInsert (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x376D9D: _read_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3759EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x85ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==93380==    by 0x37404C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0xDB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==93380== 
+==93380== 1,064 (24 direct, 1,040 indirect) bytes in 1 blocks are definitely lost in loss record 75 of 81
+==93380==    at 0x74D7: malloc_zone_malloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x377171: NXCreateMapTableFromZone (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x376722: _read_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3759EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x85ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==93380==    by 0x37404C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0xDB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==93380==    by 0x7FFF5FC13377: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC13761: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380== 
+==93380== 8,192 bytes in 8 blocks are definitely lost in loss record 80 of 81
+==93380==    at 0x74D7: malloc_zone_malloc (in /usr/local/Cellar/valgrind/3.8.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==93380==    by 0x3765AE: objc::DenseMap<objc_object*, unsigned long, true, objc::DenseMapInfo<objc_object*>, objc::DenseMapInfo<unsigned long> >::init(unsigned int) (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x37655A: arr_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3759DF: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x3754F3: map_images (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==93380==    by 0x85ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==93380==    by 0x37404C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==93380==    by 0xDB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==93380==    by 0x7FFF5FC13377: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380==    by 0x7FFF5FC13761: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==93380== 
+==93380== LEAK SUMMARY:
+==93380==    definitely lost: 8,624 bytes in 14 blocks
+==93380==    indirectly lost: 1,168 bytes in 5 blocks
+==93380==      possibly lost: 4,933 bytes in 68 blocks
+==93380==    still reachable: 44,072 bytes in 276 blocks
+==93380==         suppressed: 0 bytes in 0 blocks
+==93380== Reachable blocks (those to which a pointer was found) are not shown.
+==93380== To see them, rerun with: --leak-check=full --show-reachable=yes
+==93380== 
+==93380== ERROR SUMMARY: 18 errors from 18 contexts (suppressed: 0 from 0)
+==93380== ERROR SUMMARY: 18 errors from 18 contexts (suppressed: 0 from 0)
